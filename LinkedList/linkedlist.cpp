@@ -31,9 +31,23 @@ class LinkedList {
             // 3. we have set the head as the new node.
             head = newNode;
         }
+
+        void show() {
+            Node *temp = head;
+            while (temp != NULL) {
+                cout << temp->value << "-->";
+                temp = temp->next;
+            }
+            cout << "NULL" << endl;
+            delete temp;
+        }
 };
 
 int main() {
-
+    LinkedList *linkedList = new LinkedList();
+    linkedList->insertFront(1);
+    linkedList->insertFront(2);
+    linkedList->insertFront(3);
+    linkedList->show();
     return 0;
 }
